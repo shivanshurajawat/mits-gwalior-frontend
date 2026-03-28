@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MITS Gwalior - Official Website</title>
+
+  <!-- bootstrap CDN (i watched a youtube tutorial for this) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto&display=swap" rel="stylesheet"/>
+
+  <!-- font awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <style>
+    /* === MY CSS === */
+    /* made by Rahul Verma, 1st year CSE, MITS */
+    /* started at 8pm, submitted at 12am lol */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      background-color: #1a237e !important;
+      padding: 12px 0;
+    }
+
+    .navbar-brand {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: white !important;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-placeholder {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .brand-text span:first-child {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .brand-text span:last-child {
+      font-size: 0.7rem;
+      font-weight: 400;
+      opacity: 0.85;
+    }
+
+    .nav-link {
+      color: rgba(255,255,255,0.85) !important;
+      font-size: 0.9rem;
+      padding: 6px 12px !important;
+    }
+
+    .nav-link:hover {
+      color: #ffeb3b !important;
+    }
+
+    .navbar-toggler {
+      border-color: rgba(255,255,255,0.4) !important;
+    }
+
+    .navbar-toggler-icon {
+      filter: invert(1);
+    }
+
+    /* NOTICE BAR */
+    .notice-bar {
+      background-color: #e53935;
+      color: white;
+      padding: 8px 0;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .notice-bar strong {
+      background: #ffeb3b;
+      color: #333;
+      padding: 2px 8px;
+      border-radius: 3px;
+      margin-right: 10px;
+      font-size: 0.78rem;
+    }
+
+    /* HERO SECTION */
+    #hero {
+      background: linear-gradient(rgba(26,35,126,0.82), rgba(26,35,126,0.75)),
+                  url('https://images.unsplash.com/photo-1562774053-701939374585?w=1400&q=80') center/cover no-repeat;
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      color: white;
+      text-align: center;
+      padding: 80px 20px 60px;
+    }
+
+    #hero h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    }
+
+    #hero h1 span {
+      color: #ffeb3b;
+    }
+
+    #hero p.tagline {
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      opacity: 0.9;
+    }
+
+    #hero .est {
+      font-size: 0.85rem;
+      opacity: 0.7;
+      margin-bottom: 28px;
+      letter-spacing: 1px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+
+    .hero-btns .btn-main {
+      background-color: #ffeb3b;
+      color: #1a237e;
+      font-weight: 700;
+      padding: 11px 28px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.92rem;
+      border: none;
+      transition: transform 0.2s;
+    }
+
+    .hero-btns .btn-main:hover {
+      transform: translateY(-2px);
+      background-color: #fdd835;
+    }
+
+    .hero-btns .btn-outline {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+      padding: 10px 26px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.92rem;
+      transition: all 0.2s;
+    }
+
+    .hero-btns .btn-outline:hover {
+      background: rgba(255,255,255,0.15);
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .stat-box {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 8px;
+      padding: 14px 22px;
+      text-align: center;
+      min-width: 110px;
+      backdrop-filter: blur(4px);
+    }
+
+    .stat-box .num {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: #ffeb3b;
+      line-height: 1;
+    }
+
+    .stat-box .lbl {
+      font-size: 0.72rem;
+      opacity: 0.8;
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* SECTION COMMON */
+    section {
+      padding: 64px 0;
+    }
+
+    .sec-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #1a237e;
+      margin-bottom: 8px;
+    }
+
+    .sec-underline {
+      width: 50px;
+      height: 4px;
+      background-color: #e53935;
+      margin: 0 auto 12px;
+      border-radius: 2px;
+    }
+
+    .sec-sub {
+      color: #666;
+      font-size: 0.93rem;
+      max-width: 550px;
+      margin: 0 auto 36px;
+    }
+
+    /* ABOUT */
+    #about {
+      background: white;
+    }
+
+    .about-img-box {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+      background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: white;
+      font-size: 4rem;
+    }
+
+    .about-img-box p {
+      font-size: 0.9rem;
+      margin-top: 10px;
+      opacity: 0.8;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .about-point {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .about-point i {
+      color: #1a237e;
+      font-size: 1.1rem;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
+    .about-point h5 {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 3px;
+    }
+
+    .about-point p {
+      font-size: 0.85rem;
+      color: #555;
+      margin: 0;
+    }
+
+    /* ACADEMICS */
+    #academics {
+      background: #f5f5f5;
+    }
+
+    .prog-tabs {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .prog-tabs button {
+      padding: 7px 20px;
+      border-radius: 20px;
+      border: 2px solid #1a237e;
+      background: transparent;
+      color: #1a237e;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .prog-tabs button.active,
+    .prog-tabs button:hover {
+      background: #1a237e;
+      color: white;
+    }
+
+    .program-card {
+      background: white;
+      border-radius: 8px;
+      padding: 22px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+      height: 100%;
+      border-left: 4px solid #1a237e;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .program-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+
+    .program-card .prog-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .program-card h5 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #1a237e;
+      margin-bottom: 8px;
+    }
+
+    .program-card p {
+      font-size: 0.82rem;
+      color: #666;
+      margin-bottom: 14px;
+      line-height: 1.55;
+    }
+
+    .program-card .prog-meta {
+      font-size: 0.78rem;
+      color: #888;
+    }
+
+    .program-card .prog-meta i {
+      color: #e53935;
+      margin-right: 4px;
+    }
+
+    .download-btn {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 0.8rem;
+      color: #1a237e;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .download-btn:hover {
+      text-decoration: underline;
+    }
+
+    .download-btn i {
+      margin-right: 4px;
+    }
+
+    /* DEPARTMENTS */
+    #departments {
+      background: white;
+    }
+
+    .dept-card {
+      background: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 24px 18px;
+      text-align: center;
+      transition: all 0.25s;
+      height: 100%;
+      text-decoration: none;
+      display: block;
+      color: #333;
+    }
+
+    .dept-card:hover {
+      border-color: #1a237e;
+      box-shadow: 0 4px 18px rgba(26,35,126,0.12);
+      transform: translateY(-3px);
+      color: #1a237e;
+    }
+
+    .dept-card .dept-icon {
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .dept-card h6 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 0.88rem;
+      margin-bottom: 6px;
+    }
+
+    /* ANNOUNCEMENTS */
+    #announcements {
+      background: #f5f5f5;
+    }
+
+    .notice-card {
+      background: white;
+      border-radius: 6px;
+      padding: 16px 18px;
+      margin-bottom: 12px;
+      border-left: 4px solid #1a237e;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+      text-decoration: none;
+      color: #333;
+      transition: box-shadow 0.2s;
+    }
+
+    .notice-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+
+    .notice-card.exam { border-left-color: #e53935; }
+    .notice-card.event { border-left-color: #43a047; }
+    .notice-card.placement { border-left-color: #fb8c00; }
+
+    .notice-date {
+      background: #1a237e;
+      color: white;
+      border-radius: 6px;
+      padding: 8px 10px;
+      text-align: center;
+      min-width: 50px;
+      flex-shrink: 0;
+    }
+
+    .notice-card.exam .notice-date { background: #e53935; }
+    .notice-card.event .notice-date { background: #43a047; }
+    .notice-card.placement .notice-date { background: #fb8c00; }
+
+    .notice-date .nd { font-size: 1.4rem; font-weight: 700; line-height: 1; }
+    .notice-date .nm { font-size: 0.65rem; text-transform: uppercase; margin-top: 2px; opacity: 0.9; }
+
+    .notice-body h6 {
+      font-weight: 600;
+      font-size: 0.92rem;
+      margin-bottom: 4px;
+      color: #222;
+    }
+
+    .notice-body p {
+      font-size: 0.81rem;
+      color: #666;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .notice-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      padding: 2px 9px;
+      border-radius: 10px;
+      font-weight: 600;
+      margin-top: 6px;
+    }
+
+    .tag-exam { background: #ffebee; color: #e53935; }
+    .tag-event { background: #e8f5e9; color: #43a047; }
+    .tag-placement { background: #fff3e0; color: #fb8c00; }
+    .tag-notice { background: #e3f2fd; color: #1565c0; }
+
+    .mini-calendar {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+    }
+
+    .mini-calendar h6 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #1a237e;
+      margin-bottom: 14px;
+      text-align: center;
+    }
+
+    .cal-table {
+      width: 100%;
+      text-align: center;
+      font-size: 0.8rem;
+      border-collapse: collapse;
+    }
+
+    .cal-table th {
+      color: #888;
+      font-weight: 600;
+      padding: 4px 0;
+    }
+
+    .cal-table td {
+      padding: 5px 2px;
+      border-radius: 4px;
+      cursor: pointer;
+      color: #333;
+    }
+
+    .cal-table td:hover { background: #e8eaf6; }
+    .cal-table td.today { background: #1a237e; color: white; border-radius: 50%; font-weight: 700; }
+    .cal-table td.has-event { color: #e53935; font-weight: 700; }
+    .cal-table td.empty { color: #ccc; cursor: default; }
+
+    .upcoming-list { margin-top: 18px; }
+    .upcoming-list h6 { font-size: 0.82rem; font-weight: 700; color: #444; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    .up-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.8rem;
+      color: #555;
+      margin-bottom: 8px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .up-item:last-child { border-bottom: none; margin-bottom: 0; }
+    .up-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 4px; }
+
+    /* RESOURCES */
+    #resources {
+      background: white;
+    }
+
+    .resource-card {
+      background: #f8f9ff;
+      border: 1px solid #e3e6f8;
+      border-radius: 8px;
+      padding: 22px 18px;
+      height: 100%;
+      transition: all 0.2s;
+      text-decoration: none;
+      display: block;
+      color: #333;
+    }
+
+    .resource-card:hover {
+      background: #1a237e;
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(26,35,126,0.2);
+    }
+
+    .resource-card .rc-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .resource-card h6 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+    }
+
+    .resource-card p {
+      font-size: 0.8rem;
+      line-height: 1.5;
+      margin: 0;
+      color: #666;
+    }
+
+    .resource-card:hover p { color: rgba(255,255,255,0.8); }
+
+    /* CONTACT */
+    #contact {
+      background: #f5f5f5;
+    }
+
+    .contact-info-card {
+      background: #1a237e;
+      color: white;
+      border-radius: 8px;
+      padding: 30px;
+      height: 100%;
+    }
+
+    .contact-info-card h4 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.2rem;
+      margin-bottom: 24px;
+    }
+
+    .c-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .c-item i {
+      font-size: 1.1rem;
+      color: #ffeb3b;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
+    .c-item p {
+      font-size: 0.85rem;
+      opacity: 0.9;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .c-item strong {
+      display: block;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 3px;
+      opacity: 0.7;
+    }
+
+    .contact-form-card {
+      background: white;
+      border-radius: 8px;
+      padding: 30px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    }
+
+    .contact-form-card h4 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem;
+      color: #1a237e;
+      margin-bottom: 22px;
+    }
+
+    .form-label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #555;
+    }
+
+    .form-control, .form-select {
+      font-size: 0.88rem;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+      padding: 10px 14px;
+    }
+
+    .form-control:focus, .form-select:focus {
+      border-color: #1a237e;
+      box-shadow: 0 0 0 3px rgba(26,35,126,0.1);
+    }
+
+    .submit-btn {
+      background: #1a237e;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.92rem;
+      width: 100%;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .submit-btn:hover {
+      background: #283593;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #111827;
+      color: #ccc;
+      padding: 48px 0 0;
+    }
+
+    footer h5 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 16px;
+      font-size: 0.95rem;
+    }
+
+    footer ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    footer ul li a {
+      color: #aaa;
+      text-decoration: none;
+      font-size: 0.84rem;
+      display: block;
+      padding: 4px 0;
+      transition: color 0.2s;
+    }
+
+    footer ul li a:hover {
+      color: #ffeb3b;
+    }
+
+    footer p {
+      font-size: 0.84rem;
+      color: #aaa;
+      line-height: 1.7;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .footer-socials a {
+      width: 34px;
+      height: 34px;
+      background: #1e293b;
+      color: #ccc;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+
+    .footer-socials a:hover {
+      background: #ffeb3b;
+      color: #111;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #1e293b;
+      padding: 16px 0;
+      margin-top: 36px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #666;
+    }
+
+    #backToTop {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #1a237e;
+      color: white;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 4px;
+      cursor: pointer;
+      display: none;
+      font-size: 1rem;
+      z-index: 999;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    #backToTop:hover { background: #e53935; }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      animation: fadeInUp 0.5s ease both;
+    }
+
+    @media (max-width: 768px) {
+      #hero h1 { font-size: 1.7rem; }
+      #hero { min-height: auto; padding: 100px 16px 50px; }
+      .sec-title { font-size: 1.5rem; }
+      .stat-box { min-width: 90px; padding: 10px 14px; }
+      .stat-box .num { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <div class="logo-placeholder">🎓</div>
+        <div class="brand-text">
+          <span>MITS Gwalior</span>
+          <span>Madhav Institute of Technology &amp; Science</span>
+        </div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto gap-1">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#academics">Academics</a></li>
+          <li class="nav-item"><a class="nav-link" href="#departments">Departments</a></li>
+          <li class="nav-item"><a class="nav-link" href="#announcements">Notices</a></li>
+          <li class="nav-item"><a class="nav-link" href="#resources">Resources</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-2">
+            <a class="nav-link" href="#contact"
+               style="background:#ffeb3b;color:#1a237e!important;border-radius:4px;font-weight:700;padding:6px 16px!important;">
+              Apply Now
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- NOTICE BAR -->
+  <div class="notice-bar">
+    <div class="container">
+      <marquee behavior="scroll" direction="left" scrollamount="4">
+        <strong>NOTICE</strong> Mid Semester Exams: 15-22 March 2025 &nbsp;&nbsp;|&nbsp;&nbsp;
+        <strong>EVENT</strong> Technozion 2025 - Registrations Open &nbsp;&nbsp;|&nbsp;&nbsp;
+        <strong>NOTICE</strong> Scholarship Applications Last Date: 28 March 2025 &nbsp;&nbsp;|&nbsp;&nbsp;
+        <strong>PLACEMENT</strong> Campus Drive: TCS, Infosys, Wipro - Register Now &nbsp;&nbsp;|&nbsp;&nbsp;
+        <strong>ADMISSIONS</strong> B.Tech Admissions Open for 2025-26 &nbsp;&nbsp;|&nbsp;&nbsp;
+        <strong>NEWS</strong> MITS ranked in Top 100 Engineering Colleges - NIRF 2024
+      </marquee>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="container">
+      <div class="fade-in">
+        <h1>Welcome to <span>MITS Gwalior</span></h1>
+        <p class="tagline">Madhav Institute of Technology &amp; Science</p>
+        <p class="est">ESTABLISHED 1957 &nbsp;|&nbsp; NAAC A++ ACCREDITED &nbsp;|&nbsp; AICTE APPROVED &nbsp;|&nbsp; RGPV AFFILIATED</p>
+        <div class="hero-btns">
+          <a href="#academics" class="btn-main">&#128218; Explore Programs</a>
+          <a href="#announcements" class="btn-outline">&#128276; Latest Notices</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-box">
+            <div class="num">12,000+</div>
+            <div class="lbl">Students</div>
+          </div>
+          <div class="stat-box">
+            <div class="num">48</div>
+            <div class="lbl">Programs</div>
+          </div>
+          <div class="stat-box">
+            <div class="num">300+</div>
+            <div class="lbl">Faculty</div>
+          </div>
+          <div class="stat-box">
+            <div class="num">95%</div>
+            <div class="lbl">Placement</div>
+          </div>
+          <div class="stat-box">
+            <div class="num">67+</div>
+            <div class="lbl">Years</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2 class="sec-title">About MITS</h2>
+        <div class="sec-underline"></div>
+        <p class="sec-sub">One of the oldest and most respected technical institutions in Madhya Pradesh, MITS has been shaping engineers and innovators since 1957.</p>
+      </div>
+      <div class="row align-items-center g-4">
+        <div class="col-lg-5">
+          <div class="about-img-box">
+            &#127963;
+            <p>MITS Campus, Gwalior</p>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <p style="color:#444;margin-bottom:22px;font-size:0.93rem;line-height:1.75;">
+            Madhav Institute of Technology &amp; Science (MITS), Gwalior is an autonomous premier technical institution affiliated to Rajiv Gandhi Proudyogiki Vishwavidyalaya (RGPV). The institute offers undergraduate, postgraduate, and doctoral programs in engineering, technology, and management. With a legacy of academic excellence spanning over six decades, MITS continues to produce industry-ready graduates who excel globally.
+          </p>
+          <div class="about-point">
+            <i class="fas fa-check-circle"></i>
+            <div>
+              <h5>NAAC A++ Accredited</h5>
+              <p>Recognized with the highest accreditation grade, reflecting commitment to quality education and research.</p>
+            </div>
+          </div>
+          <div class="about-point">
+            <i class="fas fa-check-circle"></i>
+            <div>
+              <h5>Research &amp; Innovation</h5>
+              <p>25+ active research labs, 60+ international collaborations, funded projects from DST, DRDO, and ISRO.</p>
+            </div>
+          </div>
+          <div class="about-point">
+            <i class="fas fa-check-circle"></i>
+            <div>
+              <h5>Excellent Placement Record</h5>
+              <p>500+ recruiting companies including Microsoft, Amazon, TCS, Infosys, L&amp;T. Average package 7.5 LPA.</p>
+            </div>
+          </div>
+          <div class="about-point">
+            <i class="fas fa-check-circle"></i>
+            <div>
+              <h5>Modern Infrastructure</h5>
+              <p>State-of-the-art labs, digital library with 50,000+ books, sports complex, 100% Wi-Fi campus.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACADEMICS -->
+  <section id="academics">
+    <div class="container">
+      <div class="text-center mb-2">
+        <h2 class="sec-title">Academics &amp; Course Schemes</h2>
+        <div class="sec-underline"></div>
+        <p class="sec-sub">Explore our programs and download the latest course schemes / syllabi for each semester.</p>
+      </div>
+      <div class="prog-tabs">
+        <button class="active" onclick="filterProgs('all',this)">All</button>
+        <button onclick="filterProgs('ug',this)">B.Tech / UG</button>
+        <button onclick="filterProgs('pg',this)">M.Tech / PG</button>
+        <button onclick="filterProgs('mba',this)">MBA</button>
+        <button onclick="filterProgs('phd',this)">PhD</button>
+      </div>
+      <div class="row g-3" id="progGrid">
+        <div class="col-md-6 col-lg-4 prog-item" data-cat="ug">
+          <div class="program-card">
+            <div class="prog-icon">&#128187;</div>
+            <h5>B.Tech - Computer Science &amp; Engineering</h5>
+            <p>4-year program covering data structures, algorithms, DBMS, OS, AI/ML, and full-stack development.</p>
+            <div class="prog-meta">
+              <i class="fas fa-calendar-alt"></i> 4 Years &nbsp;|&nbsp;
+              <i class="fas fa-book"></i> 8 Semesters &nbsp;|&nbsp;
+              <i class="fas fa-users"></i> 180 Seats
+            </div>
+            <a href="#" class="download-btn"><i class="fas fa-download"></i> Download Scheme PDF</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 prog-item" data-cat="ug">
+          <div class="program-card">
+            <div class="prog-icon">&#9889;</div>
+            <h5>B.Tech - Electrical Engineering</h5>
+            <p>Power systems, electronics, control theory, electrical machines, and renewable energy technologies.</p>
+            <div class="prog-meta">
+              <i class="fas fa-calendar-alt"></i> 4 Years &nbsp;|&nbsp;
+              <i class="fas fa-book"></i> 8 Semesters &nbsp;|&nbsp;
+              <i class="fas fa-users"></i> 120 Seats
+            </div>
+            <a href="#" class="download-btn"><i class="fas fa-download"></i> Download Scheme PDF</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 prog-item" data-cat="ug">
+          <div class="program-card">
+            <div class="prog-icon">&#9881;&#65039;</div>
+            <h5>B.Tech - Mechanical Engineering</h5>
+            <p>Thermodynamics, manufacturing technology, CAD/CAM, robotics, and industrial engineering.</p>
+            <div class="prog-meta">
+              <i class="fas fa-calendar-alt"></i> 4 Years &nbsp;|&nbsp;
+              <i class="fas fa-book"></i> 8 Semesters &nbsp;|&nbsp;
+              <i class="fas fa-users"></i> 120 Seats
+            </div>
+            <a href="#" class="download-btn"><i class="fas fa-download"></i> Download Scheme PDF</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 prog-item" data-cat="ug">
+          <div class="program-card">
+            <div class="prog-icon">&#128225;</div>
+            <h5>B.Tech - Electronics &amp; Communication</h5>
+            <p>Analog/digital electronics, VLSI, embedded systems, signal processing, and communication networks.</p>
+            <div class="prog-meta">
+              <i class="fas fa-calendar-alt"></i> 4 Years &nbsp;|&nbsp;
+              <i class="fas fa-book"></i> 8 Semesters &nbsp;|&nbsp;
+              <i class="fas fa-users"></i> 120 Seats
+            </div>
+            <a href="#" class="download-btn"><i class="fas fa-download"></i> Download Scheme PDF</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 prog-item" data-cat="pg">
+          <div class="program-card" style="border-left-color:#e53935">
+            <div class="prog-icon">&#129302;</div>
+            <h5>M.Tech - Computer Science &amp; Engineering</h5>
+            <p>Advanced topics in AI, machine learning, distributed systems, and computational intelligence.</p>
+            <div class="prog-meta">
+              <i class="fas fa-calendar-alt"></i> 2 Years &nbsp;|&nbsp;
+              <i class="fas fa-book"></i> 4 Semesters &nbsp;|&nbsp;
+              <i class="fas fa-users"></i> 30 Seats
+            </div>
+            <a href="#" class="download-btn"><i class="fas fa-download"></i> Download Scheme PDF</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 prog-item" data-cat="mba">
+          <div class="program-card" style="border-left-color:#43a047">
+            <div class="prog-icon">&#128202;</div>
+            <h5>MBA - Technology Management</h5>
+            <p>Business strategy, finance, operations management, digital transformation, and entrepreneurship.</p>
+            <div class="prog-meta">
+              <i class="fas fa-calendar-alt"></i> 2 Years &nbsp;|&nbsp;
+              <i class="fas fa-book"></i> 4 Semesters &nbsp;|&nbsp;
+              <i class="fas fa-users"></i> 60 Seats
+            </div>
+            <a href="#" class="download-btn"><i class="fas fa-download"></i> Download Scheme PDF</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 prog-item" data-cat="phd">
+          <div class="program-card" style="border-left-color:#fb8c00">
+            <div class="prog-icon">&#128300;</div>
+            <h5>PhD Research Programs</h5>
+            <p>Doctoral programs across 10+ disciplines with GATE/NET fellowship, industry collaboration, and international exposure.</p>
+            <div class="prog-meta">
+              <i class="fas fa-calendar-alt"></i> 3-5 Years &nbsp;|&nbsp;
+              <i class="fas fa-flask"></i> Research Based
+            </div>
+            <a href="#" class="download-btn"><i class="fas fa-arrow-right"></i> Know More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPARTMENTS -->
+  <section id="departments">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2 class="sec-title">Our Departments</h2>
+        <div class="sec-underline"></div>
+        <p class="sec-sub">MITS has 10+ academic departments with experienced faculty and well-equipped laboratories.</p>
+      </div>
+      <div class="row g-3">
+        <div class="col-6 col-md-4 col-lg-3">
+          <a href="#" class="dept-card">
+            <span class="dept-icon">&#128187;</span>
+            <h6>Computer Science &amp; Engg.</h6>
+            <div class="small text-muted">48 Faculty &bull; 1200 Students</div>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <a href="#" class="dept-card">
+            <span class="dept-icon">&#9889;</span>
+            <h6>Electrical Engineering</h6>
+            <div class="small text-muted">36 Faculty &bull; 960 Students</div>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <a href="#" class="dept-card">
+            <span class="dept-icon">&#9881;&#65039;</span>
+            <h6>Mechanical Engineering</h6>
+            <div class="small text-muted">40 Faculty &bull; 880 Students</div>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <a href="#" class="dept-card">
+            <span class="dept-icon">&#128225;</span>
+            <h6>Electronics &amp; Comm.</h6>
+            <div class="small text-muted">34 Faculty &bull; 840 Students</div>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <a href="#" class="dept-card">
+            <span class="dept-icon">&#129514;</span>
+            <h6>Chemical Engineering</h6>
+            <div class="small text-muted">28 Faculty &bull; 640 Students</div>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <a href="#" class="dept-card">
+            <span class="dept-icon">&#127959;&#65039;</span>
+            <h6>Civil Engineering</h6>
+            <div class="small text-muted">32 Faculty &bull; 720 Students</div>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <a href="#" class="dept-card">
+            <span class="dept-icon">&#128300;</span>
+            <h6>Applied Sciences &amp; Maths</h6>
+            <div class="small text-muted">60 Faculty &bull; 1400 Students</div>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <a href="#" class="dept-card">
+            <span class="dept-icon">&#128188;</span>
+            <h6>Management Studies</h6>
+            <div class="small text-muted">22 Faculty &bull; 480 Students</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANNOUNCEMENTS -->
+  <section id="announcements">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2 class="sec-title">Notices &amp; Announcements</h2>
+        <div class="sec-underline"></div>
+        <p class="sec-sub">Stay updated with latest exam schedules, events, and important notices from MITS.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-8">
+          <a class="notice-card exam" href="#">
+            <div class="notice-date"><div class="nd">15</div><div class="nm">Mar</div></div>
+            <div class="notice-body">
+              <h6>Mid Semester Examination Schedule 2025</h6>
+              <p>The complete timetable for all B.Tech, M.Tech UG and PG mid-semester exams has been released. Students must download hall tickets from the portal.</p>
+              <span class="notice-tag tag-exam">Exam</span>
+            </div>
+          </a>
+          <a class="notice-card event" href="#">
+            <div class="notice-date"><div class="nd">10</div><div class="nm">Mar</div></div>
+            <div class="notice-body">
+              <h6>Technozion 2025 - Annual Technical Festival</h6>
+              <p>MITS's flagship annual tech fest is back! 20+ events including hackathon, robotics challenge, paper presentation, and coding competition. Register before 8th March.</p>
+              <span class="notice-tag tag-event">Event</span>
+            </div>
+          </a>
+          <a class="notice-card" href="#">
+            <div class="notice-date" style="background:#1565c0"><div class="nd">05</div><div class="nm">Mar</div></div>
+            <div class="notice-body">
+              <h6>Merit-cum-Means Scholarship Applications 2025</h6>
+              <p>Applications are invited from students whose annual family income is below Rs. 8 LPA. Submit documents to the scholarship committee office. Last date: 28 March 2025.</p>
+              <span class="notice-tag tag-notice">Notice</span>
+            </div>
+          </a>
+          <a class="notice-card placement" href="#">
+            <div class="notice-date"><div class="nd">28</div><div class="nm">Feb</div></div>
+            <div class="notice-body">
+              <h6>Campus Placement Drive - TCS, Infosys &amp; Wipro</h6>
+              <p>Eligible students (7.0+ CGPA, no active backlogs) can register for the placement drive via the Training &amp; Placement portal. Pre-placement talk on 25th Feb.</p>
+              <span class="notice-tag tag-placement">Placement</span>
+            </div>
+          </a>
+          <a class="notice-card" href="#">
+            <div class="notice-date" style="background:#1565c0"><div class="nd">20</div><div class="nm">Feb</div></div>
+            <div class="notice-body">
+              <h6>Library Timing Extended During Exam Period</h6>
+              <p>The central library will remain open till 11:00 PM from 1st March to 22nd March 2025 for student convenience during examinations.</p>
+              <span class="notice-tag tag-notice">Notice</span>
+            </div>
+          </a>
+          <div class="text-center mt-3">
+            <a href="#" style="color:#1a237e;font-size:0.88rem;font-weight:600;text-decoration:none;">
+              View All Notices <i class="fas fa-arrow-right ms-1"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="mini-calendar">
+            <h6>&#128197; March 2025</h6>
+            <table class="cal-table">
+              <thead>
+                <tr>
+                  <th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th>
+                </tr>
+              </thead>
+              <tbody id="calBody"></tbody>
+            </table>
+            <div class="upcoming-list">
+              <h6>Upcoming Events</h6>
+              <div class="up-item">
+                <div class="up-dot" style="background:#e53935"></div>
+                <span><strong>Mar 15</strong> - Mid-Sem Exams Begin</span>
+              </div>
+              <div class="up-item">
+                <div class="up-dot" style="background:#43a047"></div>
+                <span><strong>Mar 10</strong> - Technozion 2025</span>
+              </div>
+              <div class="up-item">
+                <div class="up-dot" style="background:#1565c0"></div>
+                <span><strong>Mar 28</strong> - Scholarship Deadline</span>
+              </div>
+              <div class="up-item">
+                <div class="up-dot" style="background:#fb8c00"></div>
+                <span><strong>Feb 28</strong> - Placement Drive (TCS)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESOURCES -->
+  <section id="resources">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2 class="sec-title">Student Resources</h2>
+        <div class="sec-underline"></div>
+        <p class="sec-sub">Quick links to all important student portals and services at MITS.</p>
+      </div>
+      <div class="row g-3">
+        <div class="col-6 col-md-4 col-lg-3">
+          <a href="#" class="resource-card">
+            <span class="rc-icon">&#127891;</span>
+            <h6>Student Academic Portal</h6>
+            <p>Grades, attendance, assignments, and course materials</p>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <a href="#" class="resource-card">
+            <span class="rc-icon">&#128218;</span>
+            <h6>Digital Library</h6>
+            <p>50,000+ e-books, journals, IEEE Xplore, Springer access</p>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <a href="#" class="resource-card">
+            <span class="rc-icon">&#128188;</span>
+            <h6>T&amp;P Portal</h6>
+            <p>Placement registrations, internships, company listings</p>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <a href="#" class="resource-card">
+            <span class="rc-icon">&#127968;</span>
+            <h6>Hostel Services</h6>
+            <p>Room allotment, mess menu, fee payment, maintenance</p>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <a href="#" class="resource-card">
+            <span class="rc-icon">&#127973;</span>
+            <h6>Health Centre</h6>
+            <p>Book appointments, health records, counseling services</p>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <a href="#" class="resource-card">
+            <span class="rc-icon">&#127891;</span>
+            <h6>Scholarship Portal</h6>
+            <p>Merit, MCM, and sports scholarships - apply here</p>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <a href="#" class="resource-card">
+            <span class="rc-icon">&#129518;</span>
+            <h6>CGPA Calculator</h6>
+            <p>Calculate SGPA/CGPA based on RGPV grading system</p>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <a href="#" class="resource-card">
+            <span class="rc-icon">&#128241;</span>
+            <h6>MITS Mobile App</h6>
+            <p>Digital ID card, timetable, notifications - iOS &amp; Android</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2 class="sec-title">Contact Us</h2>
+        <div class="sec-underline"></div>
+        <p class="sec-sub">Have questions? Reach out to us at the addresses below or fill in the form.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <div class="contact-info-card">
+            <h4>&#128222; Get In Touch</h4>
+            <div class="c-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <p><strong>Address</strong>Gole Ka Mandir, Race Course Road<br>Gwalior, Madhya Pradesh - 474005</p>
+            </div>
+            <div class="c-item">
+              <i class="fas fa-phone"></i>
+              <p><strong>Phone</strong>Admissions: +91 751 240 9300<br>General: +91 751 240 9400</p>
+            </div>
+            <div class="c-item">
+              <i class="fas fa-envelope"></i>
+              <p><strong>Email</strong>admissions@mits.ac.in<br>info@mits.ac.in</p>
+            </div>
+            <div class="c-item">
+              <i class="fas fa-clock"></i>
+              <p><strong>Office Hours</strong>Mon - Sat: 9:00 AM - 5:00 PM<br>Sunday: Closed</p>
+            </div>
+            <div class="c-item">
+              <i class="fas fa-globe"></i>
+              <p><strong>Website</strong>www.mits.ac.in</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="contact-form-card">
+            <h4>Send us a Message</h4>
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label class="form-label">First Name</label>
+                <input type="text" class="form-control" placeholder="e.g. Arjun">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Last Name</label>
+                <input type="text" class="form-control" placeholder="e.g. Sharma">
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Email Address</label>
+              <input type="email" class="form-control" placeholder="your@email.com">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Phone Number</label>
+              <input type="tel" class="form-control" placeholder="+91 98765 43210">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Query Type</label>
+              <select class="form-select">
+                <option value="">-- Select --</option>
+                <option>Admission Inquiry</option>
+                <option>Academic Query</option>
+                <option>Examination</option>
+                <option>Hostel &amp; Facilities</option>
+                <option>Placement</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Message</label>
+              <textarea class="form-control" rows="4" placeholder="Write your message here..."></textarea>
+            </div>
+            <button class="submit-btn" onclick="handleSubmit(this)">
+              <i class="fas fa-paper-plane me-2"></i> Send Message
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <h5>&#127891; MITS Gwalior</h5>
+          <p>Madhav Institute of Technology &amp; Science, Gwalior is one of MP's premier engineering institutions, with a proud history since 1957. NAAC A++ | AICTE | RGPV Affiliated.</p>
+          <div class="footer-socials">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h5>Academics</h5>
+          <ul>
+            <li><a href="#">B.Tech Programs</a></li>
+            <li><a href="#">M.Tech Programs</a></li>
+            <li><a href="#">MBA</a></li>
+            <li><a href="#">PhD Programs</a></li>
+            <li><a href="#">Course Schemes</a></li>
+            <li><a href="#">Time Tables</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h5>Student Life</h5>
+          <ul>
+            <li><a href="#">Clubs &amp; Societies</a></li>
+            <li><a href="#">Sports</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Hostel</a></li>
+            <li><a href="#">Alumni</a></li>
+            <li><a href="#">Cultural Fest</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="#">Student Portal</a></li>
+            <li><a href="#">Fee Payment</a></li>
+            <li><a href="#">Library</a></li>
+            <li><a href="#">NIRF Data</a></li>
+            <li><a href="#">RTI</a></li>
+            <li><a href="#">Grievance</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h5>Administration</h5>
+          <ul>
+            <li><a href="#">Director's Message</a></li>
+            <li><a href="#">Governing Body</a></li>
+            <li><a href="#">Faculty List</a></li>
+            <li><a href="#">Tender Notices</a></li>
+            <li><a href="#">Annual Reports</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>
+        &copy; 2025 Madhav Institute of Technology &amp; Science, Gwalior. All rights reserved. &nbsp;|&nbsp;
+        <a href="#" style="color:#ffeb3b;text-decoration:none;">Privacy Policy</a> &nbsp;|&nbsp;
+        <a href="#" style="color:#ffeb3b;text-decoration:none;">Disclaimer</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- back to top button -->
+  <button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // back to top
+    window.onscroll = function() {
+      var btn = document.getElementById('backToTop');
+      if (document.documentElement.scrollTop > 300) {
+        btn.style.display = 'block';
+      } else {
+        btn.style.display = 'none';
+      }
+    };
+
+    // filter programs
+    function filterProgs(cat, btn) {
+      document.querySelectorAll('.prog-tabs button').forEach(function(b) {
+        b.classList.remove('active');
+      });
+      btn.classList.add('active');
+
+      document.querySelectorAll('.prog-item').forEach(function(item) {
+        if (cat === 'all' || item.dataset.cat === cat) {
+          item.style.display = '';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    // form submit feedback
+    function handleSubmit(btn) {
+      btn.innerHTML = '<i class="fas fa-check me-2"></i> Message Sent!';
+      btn.style.background = '#43a047';
+      setTimeout(function() {
+        btn.innerHTML = '<i class="fas fa-paper-plane me-2"></i> Send Message';
+        btn.style.background = '';
+      }, 3000);
+    }
+
+    // build march 2025 calendar
+    var eventDays = [10, 15, 22, 28];
+    var firstDay = 6;
+    var totalDays = 31;
+    var todayDate = new Date().getDate();
+
+    var calBody = document.getElementById('calBody');
+    var day = 1;
+    var rows = Math.ceil((firstDay + totalDays) / 7);
+
+    for (var r = 0; r < rows; r++) {
+      var tr = document.createElement('tr');
+      for (var c = 0; c < 7; c++) {
+        var td = document.createElement('td');
+        var idx = r * 7 + c;
+        if (idx < firstDay || day > totalDays) {
+          td.className = 'empty';
+        } else {
+          td.textContent = day;
+          if (day === 28) {
+            td.className = 'today';
+          } else if (eventDays.indexOf(day) !== -1) {
+            td.className = 'has-event';
+          }
+          day++;
+        }
+        tr.appendChild(td);
+      }
+      calBody.appendChild(tr);
+    }
+  </script>
+
+</body>
+</html>
